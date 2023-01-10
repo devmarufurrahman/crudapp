@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container py-5">
+      <h1 class="display-4 text-center">Welcome to CRUD Application</h1>
+
+      <form>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="fullName"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email address</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            aria-describedby="emailHelp"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="phone" class="form-label">Phone</label>
+          <input type="number" class="form-control" id="phone" />
+        </div>
+        <button type="submit" id="saveContact" class="btn btn-dark my-3">
+          Save Contact
+        </button>
+      </form>
+
+      <table class="table table-dark table-striped my-5">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editContactModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <form id="update_contact">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Edit Contact
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="mb-3">
+                <label for="editName" class="col-form-label">Edit Name:</label>
+                <input name="id" id="id" hidden type="number" />
+                <input
+                  name="name"
+                  type="text"
+                  class="form-control"
+                  id="editName"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editEmail" class="col-form-label"
+                  >Edit Email:</label
+                >
+                <input
+                  name="email"
+                  type="email"
+                  class="form-control"
+                  id="editEmail"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editPhone" class="col-form-label"
+                  >Edit Phone:</label
+                >
+                <input
+                  name="phone"
+                  type="number"
+                  class="form-control"
+                  id="editPhone"
+                />
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="closeModal" class="btn btn-secondary" data-bs-dismiss="modal" >
+                Close
+              </button>
+              <button type="submit" id="updateBtn" class="btn btn-primary">
+                Save Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <!-- here ended the modal dialogue -->
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+  </body>
+</html>
